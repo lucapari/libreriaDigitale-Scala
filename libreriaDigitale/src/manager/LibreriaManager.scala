@@ -1,0 +1,7 @@
+
+
+package manager
+
+object LibreriaManager {
+  
+}

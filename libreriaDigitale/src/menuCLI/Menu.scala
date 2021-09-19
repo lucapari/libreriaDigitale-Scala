@@ -1,0 +1,7 @@
+
+
+package menuCLI
+
+object Menu {
+  
+}
