@@ -4,10 +4,12 @@ package libreria
 
 class Libro(titolo: String, val autore: String, val casaEditrice: String, val numPagine: Int) extends ArticoloLibreria(titolo) {
 
+   //overload del costruttore
+  def this(titolo:String, autore:String) = this(titolo, autore, null,0)   
+  
+  //implementazione campo e metodo trait
   import TipoArticolo._
   val tipo: TipoArticolo = TipoArticolo.LIBRO
-
-  //implementazione metodo trait
   override def getStrTipoClasse: String = "Libro"
 
   def getAutore: String = autore
