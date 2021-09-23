@@ -64,13 +64,13 @@ object Menu {
     println("\n")
 
     scelta match {
-      case 0 => println("Termino il programma.") //esce dal menu
-      case 1 => visualizzaLibreria
-      case 2 => noleggiaArticolo
-      case 3 => restituisciArticolo
-      case 4 => cercaArticolo
-      case 5 => inserisciArticolo
-      case 6 => rimuoviArticolo
+      case 0 => println("Termino il programma.");//esce dal menu
+      case 1 => visualizzaLibreria; startMenuScelta
+      case 2 => noleggiaArticolo; startMenuScelta
+      case 3 => restituisciArticolo; startMenuScelta
+      case 4 => cercaArticolo; startMenuScelta
+      case 5 => inserisciArticolo; startMenuScelta
+      case 6 => rimuoviArticolo; startMenuScelta
     }
   }
 
@@ -99,14 +99,14 @@ object Menu {
     println("\n")
 
     scelta match {
-      case 0 => startMenuScelta
-      case 1 => visualizzaTuttiArticoli
-      case 2 => visualizzaLibri
-      case 3 => visualizzaRiviste
-      case 4 => visualizzaAudio
+      case 0 =>
+      case 1 => visualizzaTuttiArticoli; backToMenuScelta
+      case 2 => visualizzaLibri; backToMenuScelta
+      case 3 => visualizzaRiviste; backToMenuScelta
+      case 4 => visualizzaAudio; backToMenuScelta
     }
 
-    backToMenuScelta;
+ 
   }
 
   private def visualizzaTuttiArticoli = {
@@ -207,13 +207,14 @@ object Menu {
     }
 
     scelta match {
-      case 0 => startMenuScelta
+      case 0 =>
       case 1 => {
         print("Inserisci ID dell'articolo che si vuole cercare >> ")
         val articoloID = scala.io.StdIn.readInt()
         println()
 
         LibreriaManager.printArticolo(articoloID);
+        backToMenuScelta
       }
 
       case 2 =>
@@ -223,12 +224,13 @@ object Menu {
           println()
 
           LibreriaManager.printArticolo(nomeArticolo);
+          backToMenuScelta
         }
 
         println()
     }
 
-    backToMenuScelta
+   
   }
 
   private def inserisciArticolo = {
@@ -253,7 +255,7 @@ object Menu {
     }
 
     scelta match {
-      case 0 => startMenuScelta
+      case 0 => 
       case 1 => inserisciLibro
       case 2 => inserisciAudio
       case 3 => inserisciRivista
@@ -275,6 +277,8 @@ object Menu {
     casaEditrice = scala.io.StdIn.readLine().asInstanceOf[String]
     print("Numero pagine >>")
     numPagine = scala.io.StdIn.readInt()
+    
+    println()
 
     val lib: Libro = new Libro(titolo, autore, casaEditrice, numPagine)
 
@@ -301,6 +305,8 @@ object Menu {
     autore = scala.io.StdIn.readLine().asInstanceOf[String]
     print("Casa editrice >>")
     casaEditrice = scala.io.StdIn.readLine().asInstanceOf[String]
+    
+    println()
 
     val riv: Rivista = new Rivista(titolo, casaEditrice);
 
@@ -326,6 +332,8 @@ object Menu {
     autore = scala.io.StdIn.readLine().asInstanceOf[String]
     print("Casa discografica >>")
     casaDiscografica = scala.io.StdIn.readLine().asInstanceOf[String]
+    
+    println()
 
     val aud: Audio = new Audio(titolo, autore, casaDiscografica);
 
@@ -365,7 +373,6 @@ object Menu {
     }
 
     println()
-    startMenuScelta;
   }
 
 }
