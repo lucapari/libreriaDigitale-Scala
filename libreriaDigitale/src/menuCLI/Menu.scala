@@ -241,7 +241,7 @@ object Menu {
         "*** 2] Inserisci nuovo audio\t\t\t\t\t***\n" +
         "*** 3] Inserisci nuova rivista\t\t\t\t\t***\n" +
         "***\t\t\t\t\t\t\t\t***\n" +
-        "*** 0] Termina il programma\t\t\t\t\t***\n" +
+        "*** 0] Torna al menu principale\t\t\t\t\t***\n" +
         "***\t\t\t\t\t\t\t\t***\n" +
         "*******************************************************************";
 
