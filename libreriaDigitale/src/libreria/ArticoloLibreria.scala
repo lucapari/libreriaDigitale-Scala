@@ -17,9 +17,13 @@ abstract class ArticoloLibreria(val titolo: String) extends Typeable {
   def getTitolo: String = titolo
   def setDisponibilita(disponibilita: Boolean) = { this.disponibilita = disponibilita }
   
+  //metodo astratto da implementare nelle sottoclassi
+  def toString: String
+  
 }
 
 //companion object per membro statico
 object ArticoloLibreria {
   var staticID: Int = 0
 }
+
